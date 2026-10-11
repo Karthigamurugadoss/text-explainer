@@ -34,6 +34,29 @@ Everything runs on your own machine. The AI model is IBM Granite 4.1 3B served b
 - **Copy or download** the explanation as a text report
 - Responsive layout that works on desktop and mobile
 
+## Screenshots
+
+### Live spelling check while you type
+Granite flags spelling mistakes a moment after you stop typing.
+
+<img src="docs/screenshots/02-live-spellcheck.png" alt="Live spelling check showing six corrections" width="760">
+
+### Explanation and side-by-side corrections
+A plain-language explanation, then the original next to the corrected version with changes highlighted.
+
+<img src="docs/screenshots/03-explanation-and-corrections.png" alt="Explanation and corrected version side by side" width="760">
+
+### Ask follow-up questions
+<img src="docs/screenshots/04-ask-a-question.png" alt="Answer to a follow-up question" width="760">
+
+### Explain code
+In *Explain code* mode it walks through what the code does and points out likely bugs. Here it spots the divide-by-zero when the list is empty.
+
+<img src="docs/screenshots/05-explain-code.png" alt="Python code explained, with a divide-by-zero bug spotted" width="760">
+
+### Works on mobile
+<img src="docs/screenshots/06-mobile.png" alt="Text Explainer on a phone screen" width="300">
+
 ## How it works
 
 ```

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Understand and proofread text, explain code, and ask follow-up questions. Upload text, code, PDF, or Word files with this IBM Granite 4.1 3B assistant.">
+  <meta name="author" content="Text Explainer">
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Text Explainer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Text Explainer — Understand and improve your text">
+  <meta property="og:description" content="Paste or upload text, code, PDF, or Word documents for explanations, proofreading, and follow-up answers with IBM Granite 4.1 3B.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Text Explainer — IBM Granite 4.1 3B">
+  <meta name="twitter:description" content="Explain text, proofread writing, explore code, and ask follow-up questions.">
+  <meta name="theme-color" content="#e6eee8">
+  <title>Text Explainer — AI Writing and Code Assistant</title>
+  <link rel="stylesheet" href="/style.css?v=16">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Text Explainer","description":"A text explanation, proofreading, and code guidance application powered by IBM Granite 4.1 3B.","applicationCategory":"EducationalApplication","operatingSystem":"Windows, macOS, Linux","isAccessibleForFree":true}
+  </script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div>
+        <h1>Text Explainer</h1>
+        <p class="intro">Paste text or choose a file. Get a clear explanation, useful corrections, and answers to your questions.</p>
+      </div>
+      <span class="model-badge"><span class="status-dot"></span> IBM Granite 4.1 3B</span>
+    </header>
+
+    <div class="input-heading">
+      <label for="inputText">Your text</label>
+      <button id="clearButton" class="subtle-button" type="button">Clear</button>
+    </div>
+    <textarea id="inputText" lang="en" spellcheck="true" placeholder="Paste a paragraph, word, letter, symbol, HTML, code, or other text" aria-label="Text to explain"></textarea>
+    <p id="spellStatus" class="spell-status" role="status" aria-live="polite">Live spelling and punctuation check appears after you pause typing.</p>
+    <div class="input-tools">
+      <span id="charCount" class="char-count">0 characters</span>
+      <button id="sampleButton" class="subtle-button" type="button">Try sample text</button>
+    </div>
+
+    <div class="mode-row">
+      <label for="analysisMode">Analysis mode</label>
+      <select id="analysisMode">
+        <option value="explain">Explain and review</option>
+        <option value="proofread">Proofread writing</option>
+        <option value="code">Explain code</option>
+      </select>
+    </div>
+
+    <label class="file-label" for="fileInput">Or choose a text, code, PDF, or Word file</label>
+    <div id="dropZone" class="file-row">
+      <input id="fileInput" type="file" accept=".txt,.md,.markdown,.html,.htm,.css,.js,.jsx,.ts,.tsx,.py,.json,.csv,.xml,.yaml,.yml,.log,.sql,.sh,.bat,.ps1,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+      <span id="fileLabel" class="file-hint">Drag a file here · TXT, code, PDF, or DOCX</span>
+    </div>
+
+    <div class="analyze-row">
+      <button id="analyzeButton" class="primary-button" type="button"><span>Analyze and explain</span></button>
+      <p id="status" role="status" aria-live="polite">Your text stays on this computer.</p>
+    </div>
+    <progress id="progressBar" class="progress-bar" max="100" value="0" hidden></progress>
+
+    <section id="analysisSection" class="results" hidden>
+      <div class="results-heading">
+        <h2>Explanation and analysis</h2>
+        <div class="result-tools">
+          <button id="copyButton" class="subtle-button" type="button">Copy</button>
+          <button id="downloadButton" class="subtle-button" type="button">Download</button>
+        </div>
+      </div>
+      <pre id="analysisResult"></pre>
+
+      <section id="correctionSection" class="correction-section" hidden aria-labelledby="correctionTitle">
+        <div class="correction-heading">
+          <div><h3 id="correctionTitle">Review the corrected version</h3><p>Original stays unchanged. Review or edit the suggested draft before applying it.</p></div>
+        </div>
+        <div class="correction-grid">
+          <div class="correction-pane"><h4>Original text</h4><pre id="originalVersion"></pre></div>
+          <div class="correction-pane"><h4>Suggested version <span>Changes highlighted</span></h4><div id="correctedPreview" class="corrected-preview"></div><textarea id="correctedEditor" class="corrected-editor" hidden aria-label="Edit corrected draft"></textarea></div>
+        </div>
+        <div class="correction-actions">
+          <button id="editDraftButton" class="subtle-button" type="button">Edit draft</button>
+          <button id="copyCorrectedButton" class="subtle-button" type="button">Copy corrected text</button>
+          <button id="applyCorrectedButton" class="secondary-button" type="button">Use corrected version</button>
+        </div>
+      </section>
+
+      <label class="question-label" for="questionInput">Ask a question about your input</label>
+      <div class="question-row">
+        <input id="questionInput" type="text" placeholder="What does this mean?">
+        <button id="askButton" class="secondary-button" type="button">Ask</button>
+      </div>
+      <pre id="answerResult" hidden></pre>
+    </section>
+
+    <footer>Powered locally by IBM Granite 4.1 3B · AI explanations can make mistakes.</footer>
+  </main>
+  <section class="features" aria-labelledby="featuresTitle">
+    <div class="features-heading">
+      <h2 id="featuresTitle">What you can do</h2>
+      <p>One simple place to understand, improve, and explore text.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span class="feature-number">01</span>
+        <h3>Understand anything</h3>
+        <p>Get clear explanations for paragraphs, words, symbols, HTML, and code. Choose an explanation, proofreading, or code mode.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">02</span>
+        <h3>Improve your writing</h3>
+        <p>Review spelling, grammar, punctuation, and formatting. Compare highlighted changes with your original before applying them.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">03</span>
+        <h3>Keep exploring</h3>
+        <p>Upload text, code, PDF, or Word files. Track progress on long inputs, ask follow-up questions, and save a report.</p>
+      </article>
+    </div>
+  </section>
+  <script src="/app.js?v=13"></script>
+</body>
+</html>

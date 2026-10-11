@@ -9,7 +9,7 @@
   <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://fastapi.tiangolo.com"><img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white" alt="FastAPI"></a>
   <a href="https://ollama.com"><img src="https://img.shields.io/badge/Ollama-Local_AI-000000?logo=ollama&logoColor=white" alt="Ollama"></a>
-  <a href="https://ollama.com/library/granite4.1"><img src="https://img.shields.io/badge/IBM_Granite-4.1_3B-0f62fe" alt="IBM Granite 4.1 3B"></a>
+  <a href="https://ollama.com/library/granite4.1"><img src="https://img.shields.io/badge/IBM_Granite-4.1_3B-0f62fe?logo=ibm&logoColor=white" alt="IBM Granite 4.1 3B"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
